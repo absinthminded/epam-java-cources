@@ -45,17 +45,19 @@ public class Task001Impl implements Task001 {
     }
 
     public void checkParams(String firstNumber, String secondNumber) {
-        if (firstNumber == null || secondNumber == null) throw new  IllegalArgumentException();
+        if (firstNumber == null || secondNumber == null) {
+            throw new IllegalArgumentException();
+        }
         try {
             Double.parseDouble(firstNumber.trim());
-        } catch (NumberFormatException e ) {
+        } catch (NumberFormatException e) {
             System.out.println("First value is not a number.");
         }
 
         try {
             Double.parseDouble(secondNumber.trim());
 
-        } catch (NumberFormatException e ) {
+        } catch (NumberFormatException e) {
             System.out.println("Second value is not a number.");
         }
     }
