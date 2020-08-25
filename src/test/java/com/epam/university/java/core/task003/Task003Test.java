@@ -186,7 +186,7 @@ public class Task003Test {
     public void testFlatMap() throws Exception {
         final String[] source = {
                 "1, 2,     3, 4   , 5",
-                "1, 2, 6,      7, 7, 7, 8",
+                "1, 2, 6,       7, 7, 7, 8",
                 "10, 9"
         };
         final String[] target = {
