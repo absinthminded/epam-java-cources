@@ -3,7 +3,7 @@ package com.epam.university.java.core.task002;
 import java.util.Arrays;
 import java.util.List;
 
-public class Task002Impl implements Task002 {
+public class    Task002Impl implements Task002 {
     @Override
     public boolean isEquals(String firstString, String secondString) {
         if (firstString == null || secondString == null) {
@@ -74,6 +74,12 @@ public class Task002Impl implements Task002 {
     public String join(String[] sourceCollection, String glue) {
         if (sourceCollection == null || sourceCollection.length == 0 || glue == null) {
             throw new IllegalArgumentException();
+        }
+
+        for (String str : sourceCollection) {
+            if (str == null) {
+                throw new IllegalArgumentException();
+            }
         }
 
         List<String> stringList = Arrays.asList(sourceCollection);
