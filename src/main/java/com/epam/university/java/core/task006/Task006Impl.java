@@ -16,23 +16,23 @@ public class Task006Impl implements Task006 {
 
 
         for (Measurement m : measurements) {
-            sumA = sumA +  m.getAmperage();
-            sumV = sumV +  m.getVoltage();
+            sumA = sumA + m.getAmperage();
+            sumV = sumV + m.getVoltage();
         }
 
         double avgA = sumA / numOfM;
         double avgV = sumV / numOfM;
 
-        double a = 0.0;
-        double v = 0.0;
+        double power = 0.0;
+        double squareAmperage = 0.0;
 
         for (Measurement m : measurements) {
-            a = a + ((m.getVoltage() - avgV) * (m.getAmperage() - avgA));
-            v = v + (Math.pow(m.getAmperage() - avgA, 2));
+            power = power + ((m.getVoltage() - avgV) * (m.getAmperage() - avgA));
+            squareAmperage = squareAmperage + (Math.pow(m.getAmperage() - avgA, 2));
         }
 
-        int result = (int)((a / v) * 1000);
+        int resistance = (int) ((power / squareAmperage) * 1000);
 
-        return result / 1000.0;
+        return resistance / 1000.0;
     }
 }
