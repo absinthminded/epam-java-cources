@@ -44,6 +44,11 @@ public class Task001Impl implements Task001 {
         return a / b;
     }
 
+    /**
+     * Check parameters for incoming arguments.
+     * @param firstNumber check if parameter is provided;
+     * @param secondNumber check if parameter is provided;
+     */
     public void checkParams(String firstNumber, String secondNumber) {
         if (firstNumber == null || secondNumber == null) {
             throw new IllegalArgumentException();

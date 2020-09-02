@@ -25,12 +25,12 @@ public class Task009Impl implements Task009 {
         List<String> fromSourceFile = new ArrayList<>();
 
         try {
-            Scanner myReader = new Scanner(sourceFile);
-            while (myReader.hasNextLine()) {
-                String data = myReader.nextLine();
+            Scanner scanner = new Scanner(sourceFile);
+            while (scanner.hasNextLine()) {
+                String data = scanner.nextLine();
                 fromSourceFile.add(data);
             }
-            myReader.close();
+            scanner.close();
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
