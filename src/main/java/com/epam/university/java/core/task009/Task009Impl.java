@@ -17,6 +17,10 @@ public class Task009Impl implements Task009 {
     @Override
     public Collection<String> countWords(File sourceFile) {
 
+        if (sourceFile == null) {
+            throw new IllegalArgumentException();
+        }
+
         Pattern pattern =
                 Pattern.compile("[a-zA-Z]+(?:'[a-zA-Z]+)*+(?:-[a-zA-Z]+)*",
                         Pattern.UNICODE_CHARACTER_CLASS
