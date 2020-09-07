@@ -5,7 +5,7 @@ import java.util.Stack;
 public class Task008Impl implements Task008 {
     @Override
     public boolean isValid(String sourceString) {
-        if (sourceString == null ) {
+        if (sourceString == null) {
             throw new IllegalArgumentException();
         }
 

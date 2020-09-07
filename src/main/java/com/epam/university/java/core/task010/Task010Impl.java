@@ -17,7 +17,7 @@ public class Task010Impl implements Task010 {
     @Override
     public Map<String, Integer> countWordNumbers(File source) {
 
-        if (source == null ) {
+        if (source == null) {
             throw new IllegalArgumentException();
         }
         List<String> fromSourceFile = new ArrayList<>();

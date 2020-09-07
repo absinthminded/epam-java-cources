@@ -27,4 +27,6 @@ public interface Vertex {
      * @param value coordinate value
      */
     void setY(int value);
+
+
 }
