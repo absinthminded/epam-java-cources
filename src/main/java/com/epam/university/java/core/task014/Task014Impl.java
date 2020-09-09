@@ -36,9 +36,10 @@ public class Task014Impl implements Task014 {
 
                         if (Arrays.equals(cVampire, cFangs)) {
                             if (Arrays.equals(cVampire, cFangs)) {
-                                vampireNumbers.add(new VampireNumberImpl(Integer.parseInt(stringValMultiplication)
-                                        , Integer.parseInt(stringValFirst)
-                                        , Integer.parseInt(stringValSecond)));
+                                vampireNumbers.add(new VampireNumberImpl(
+                                        Integer.parseInt(stringValMultiplication),
+                                        Integer.parseInt(stringValFirst),
+                                        Integer.parseInt(stringValSecond)));
                             }
                         }
                     }

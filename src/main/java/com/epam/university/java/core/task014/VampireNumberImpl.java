@@ -9,7 +9,12 @@ public class VampireNumberImpl implements VampireNumber {
     private int first;
     private int second;
 
-
+    /**
+     * Constructor for a vampire number.
+     * @param multiplication the vampire number.
+     * @param first multiplier.
+     * @param second multiplier.
+     */
     public VampireNumberImpl(int multiplication, int first, int second) {
         this.multiplication = multiplication;
         this.first = first;
@@ -25,6 +30,7 @@ public class VampireNumberImpl implements VampireNumber {
             return false;
         }
         VampireNumberImpl that = (VampireNumberImpl) o;
+
         return multiplication == that.multiplication;
     }
 
