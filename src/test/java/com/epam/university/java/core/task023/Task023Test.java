@@ -24,6 +24,7 @@ public class Task023Test {
         instance.extract("+712345");
     }
 
+
     @Test
     public void testDefault() throws Exception {
         assertEquals(
