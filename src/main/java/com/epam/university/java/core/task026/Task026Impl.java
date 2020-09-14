@@ -37,7 +37,7 @@ public class Task026Impl implements Task026 {
                         }
                     }
                     index += shift;
-                    if (index >= AMOUNT_OF_LETTERS) {
+                    while (index >= AMOUNT_OF_LETTERS) {
                         index -= AMOUNT_OF_LETTERS;
                     }
                     charsToEncrypt[i] = alphabetLowered[index];
@@ -49,7 +49,7 @@ public class Task026Impl implements Task026 {
                         }
                     }
                     index += shift;
-                    if (index >= AMOUNT_OF_LETTERS) {
+                    while (index >= AMOUNT_OF_LETTERS) {
                         index -= AMOUNT_OF_LETTERS;
                     }
                     charsToEncrypt[i] = alphabetUpper[index];
@@ -94,7 +94,7 @@ public class Task026Impl implements Task026 {
                         }
                     }
                     index -= shift;
-                    if (index < 0) {
+                    while (index < 0) {
                         index += AMOUNT_OF_LETTERS;
                     }
                     charsToEncrypt[i] = alphabetLowered[index];
@@ -106,7 +106,7 @@ public class Task026Impl implements Task026 {
                         }
                     }
                     index -= shift;
-                    if (index < 0) {
+                    while (index < 0) {
                         index += AMOUNT_OF_LETTERS;
                     }
                     charsToEncrypt[i] = alphabetUpper[index];
