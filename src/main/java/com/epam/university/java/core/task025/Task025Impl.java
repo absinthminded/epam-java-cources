@@ -9,6 +9,8 @@ public class Task025Impl implements Task025 {
             throw new IllegalArgumentException();
         } else if (sourceMessage.length() == 0) {
             return amountOfAlteredLetters;
+        } else if (!sourceMessage.contains("S")) {
+            throw new IllegalArgumentException();
         }
 
         boolean containsFull = sourceMessage.contains("SOS");
