@@ -24,6 +24,8 @@ public class Task027Impl implements Task027 {
             } else {
                 result = new ArrayList<>();
             }
+
+            
         }
 
 
