@@ -2,8 +2,8 @@ package com.epam.university.java.core.task019;
 
 public class RobotImpl implements Robot {
 
-     private RobotPosition robotPosition = new RobotPositionImpl(0, 0);
-     private int moveDirection = 1;
+    private RobotPosition robotPosition = new RobotPositionImpl(0, 0);
+    private int moveDirection = 1;
 
 
     @Override
@@ -28,7 +28,7 @@ public class RobotImpl implements Robot {
                 break;
             }
             case MOVE_FORWARD: {
-                RobotPosition newPosition = getRobotPositionAndDirection(getPosition());
+                RobotPosition newPosition = getNewRobotPosition(getPosition());
                 setPosition(newPosition);
                 break;
             }
@@ -36,7 +36,12 @@ public class RobotImpl implements Robot {
         }
     }
 
-    public RobotPosition getRobotPositionAndDirection(RobotPosition position) {
+    /**
+     * function to move robot in correct direction.
+     * @param position position where robot located previously.
+     * @return new position of robot.
+     */
+    public RobotPosition getNewRobotPosition(RobotPosition position) {
         int positionX = position.getX();
         int positionY = position.getY();
 
