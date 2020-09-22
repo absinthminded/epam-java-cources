@@ -12,7 +12,7 @@ public class Task023Impl implements Task023 {
 
         String operatorCode = "";
 
-        Pattern phonePattern = Pattern.compile("(?<=[78( ])(\\d{3})((?<=\\)|))");
+        Pattern phonePattern = Pattern.compile("(?<=[78( -])(\\d{3})((?<=\\)|))");
         Matcher matcher = phonePattern.matcher(phoneString);
 
         if (matcher.find()) {
