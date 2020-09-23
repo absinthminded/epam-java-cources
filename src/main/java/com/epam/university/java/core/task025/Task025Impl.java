@@ -9,8 +9,6 @@ public class Task025Impl implements Task025 {
             throw new IllegalArgumentException();
         } else if (sourceMessage.length() == 0) {
             return amountOfAlteredLetters;
-        } else if (!sourceMessage.contains("S")) {
-            throw new IllegalArgumentException();
         }
 
         boolean containsFull = sourceMessage.contains("SOS");
@@ -18,6 +16,8 @@ public class Task025Impl implements Task025 {
 
         if (containsFull || containsFullAltered) {
             amountOfAlteredLetters = sourceMessage.replaceAll("[SO]", "").length();
+        } else if (!sourceMessage.contains("S")) {
+            amountOfAlteredLetters = sourceMessage.length();
         } else {
             amountOfAlteredLetters = sourceMessage.replaceAll("[O]", "").length();
         }
