@@ -13,6 +13,7 @@ public class Task018Impl implements Task018 {
         if (toCheck == null || annotationToFind == null) {
             throw new IllegalArgumentException();
         }
+
         Class clazz = toCheck.getClass();
 
         if (clazz.isAnnotationPresent(annotationToFind)) {
