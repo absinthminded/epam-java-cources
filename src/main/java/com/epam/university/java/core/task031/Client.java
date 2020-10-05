@@ -1,5 +1,7 @@
 package com.epam.university.java.core.task031;
 
+import java.io.IOException;
+
 /**
  * Network chat client.
  */
@@ -18,5 +20,5 @@ public interface Client {
     /**
      * Stop client.
      */
-    void stop();
+    void stop() throws IOException;
 }

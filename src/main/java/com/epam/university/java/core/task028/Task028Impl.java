@@ -1,7 +1,6 @@
 package com.epam.university.java.core.task028;
 
 
-import com.fasterxml.jackson.databind.node.POJONode;
 
 public class Task028Impl implements Task028 {
     @Override
