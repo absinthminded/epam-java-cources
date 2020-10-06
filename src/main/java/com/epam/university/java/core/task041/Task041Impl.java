@@ -32,6 +32,11 @@ public class Task041Impl implements Task041 {
 
     }
 
+    /**
+     * Function to validate parameters.
+     * @param collection to check.
+     * @param entity to check.
+     */
     public void checkParams(Collection<Entity> collection, Entity entity) {
         if (collection == null || entity == null) {
             throw new IllegalArgumentException();
