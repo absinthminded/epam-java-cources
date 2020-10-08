@@ -12,15 +12,14 @@ public class Task011Impl implements Task011 {
         } else if (collection.length == 1) {
             return collection[0];
         }
+        String lastMember;
+        String[] newArray = new String[collection.length];
 
-        String[] newArray = new String[collection.length + 1];
         for (int i = 0; i < collection.length - 1; i++) {
             if (i % 2 == 0) {
                 newArray[i] = collection[i + 1];
             }
         }
-
-        String lastMember;
 
         if (collection.length % 2 == 1) {
             lastMember = newArray[0];
