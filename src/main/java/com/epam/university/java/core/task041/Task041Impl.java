@@ -8,28 +8,31 @@ public class Task041Impl implements Task041 {
         if (collection == null || value == null) {
             throw new IllegalArgumentException();
         }
-        return null;
+        Entity newEntity = new EntityImpl(collection.size(), value);
+        collection.add(newEntity);
+        return newEntity;
     }
 
     @Override
     public Entity read(Collection<Entity> collection, Entity entity) {
         checkParams(collection, entity);
-        return null;
+        return collection.contains(entity) ? entity : null;
     }
 
     @Override
     public void update(Collection<Entity> collection, Entity entity, String value) {
         checkParams(collection, entity);
-        if (value == null) {
+        if (value == null || !collection.contains(entity)) {
             throw new IllegalArgumentException();
         }
-
+        collection.remove(entity);
+        collection.add(new EntityImpl(entity.getId(), value));
     }
 
     @Override
     public void delete(Collection<Entity> collection, Entity entity) {
         checkParams(collection, entity);
-
+        collection.remove(entity);
     }
 
     /**
