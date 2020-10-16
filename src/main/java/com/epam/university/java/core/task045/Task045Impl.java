@@ -10,16 +10,12 @@ public class Task045Impl implements Task045 {
         }
 
         StringBuilder sb = new StringBuilder();
-        if (input.contains(" ")) {
-            String[] words = input.split(" ");
-            for (String word : words) {
-                sb.append(reverse(word));
-                sb.append(" ");
-            }
-            return sb.toString().trim();
-        } else {
-            return reverse(input);
+        String[] words = input.split(" ");
+        for (String word : words) {
+            sb.append(reverse(word));
+            sb.append(" ");
         }
+        return sb.toString().trim();
     }
 
     /**
