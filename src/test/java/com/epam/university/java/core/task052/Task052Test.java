@@ -4,7 +4,8 @@ import com.epam.university.java.core.helper.TestHelper;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 
 public class Task052Test {
     private Task052 instance;
@@ -15,29 +16,35 @@ public class Task052Test {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void wrongAmountofDigits() throws Exception {
+    public void wrongAmountOfDigits() {
         instance.validateCard(0);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void negativeNumber() throws Exception {
+    public void negativeNumber() {
         instance.validateCard(-1);
     }
 
-    @Test
-    public void trueValide() throws Exception {
+    @Test(expected = IllegalArgumentException.class)
+    public void bigNegativeNumber() {
+        instance.validateCard(-123456789101215L);
+    }
 
-        assertEquals("Invalid result",
-                true,
+    @Test
+    public void numberWithManyZeros() {
+        assertTrue("Invalid result",
+                instance.validateCard(40000000000002L));
+    }
+
+    @Test
+    public void trueValidation() {
+        assertTrue("Invalid result",
                 instance.validateCard(1234567890123452L));
     }
 
     @Test
-    public void falseValide() throws Exception {
-        long numbers = 123456789012345L;
-
-        assertEquals("Invalid result",
-                false,
+    public void falseValidation() {
+        assertFalse("Invalid result",
                 instance.validateCard(123456789012345L));
     }
 }
