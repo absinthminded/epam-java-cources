@@ -15,10 +15,12 @@ import java.util.Collection;
 public class ApplicationContextImpl implements ApplicationContext {
     private final BeanDefinitionToClassRepository bdToClassRepository
             = new BeanDefinitionToClassRepositoryImpl();
-    private final BeanDefinitionRegistry beanDefinitionRegistry = new BeanDefinitionRegistryImpl(bdToClassRepository);
+    private final BeanDefinitionRegistry beanDefinitionRegistry
+            = new BeanDefinitionRegistryImpl(bdToClassRepository);
     private final BeanDefinitionReader beanDefinitionReader
             = new BeanDefinitionReaderImpl(beanDefinitionRegistry, bdToClassRepository);
-    private final BeanFactory beanFactory = new BeanFactoryImpl(bdToClassRepository, beanDefinitionRegistry);
+    private final BeanFactory beanFactory
+            = new BeanFactoryImpl(bdToClassRepository, beanDefinitionRegistry);
 
 
     @Override
