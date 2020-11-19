@@ -16,7 +16,20 @@ public class Task020Impl implements Task020 {
 
         int maxCharAmount = 26;
 
-        List<String> str = new ArrayList<>(stones);
+        int numCount = 0;
+
+        String containsNum = null;
+
+        List<String> str = new ArrayList<>();
+
+        for (String s : stones) {
+            containsNum = s.replaceAll("[A-Za-z]","");
+            if (containsNum.length() >= 1) {
+                numCount++;
+            }
+            s = s.replaceAll("[0-9]", "");
+            str.add(s);
+        }
 
         int n = str.size();
 
@@ -24,8 +37,8 @@ public class Task020Impl implements Task020 {
 
         Arrays.fill(prim, Boolean.TRUE);
 
-        for (String s : str) {
 
+        for (String s : str) {
             Boolean[] sec = new Boolean[maxCharAmount];
             Arrays.fill(sec, Boolean.FALSE);
 
@@ -42,6 +55,11 @@ public class Task020Impl implements Task020 {
             if (prim[i]) {
                 count++;
             }
+        }
+
+        System.out.println(numCount);
+        if (numCount == str.size()) {
+            count++;
         }
 
         return count;
