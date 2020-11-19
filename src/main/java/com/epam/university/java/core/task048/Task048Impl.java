@@ -11,7 +11,7 @@ public class Task048Impl implements Task048 {
             throw new IllegalArgumentException();
         }
 
-        return IntStream.range(from + 1, to)
+        return IntStream.range(from, to)
                 .filter((n) -> {
                     final String number = Integer.toString(n);
                     return number.chars()
